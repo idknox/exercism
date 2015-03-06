@@ -5,8 +5,8 @@ class School
   end
 
   def to_hash
-    @students.values.each { |student| student.sort! }
-    @students.sort_by { |grade, students| grade }.to_h
+    @students.values.each {|students| students.sort!}
+    @students
   end
 
   def add(name, grade)
@@ -14,6 +14,6 @@ class School
   end
 
   def grade(grade)
-    to_hash[grade] ? to_hash[grade] : []
+    to_hash[grade] ? to_hash[grade].sort : []
   end
 end
