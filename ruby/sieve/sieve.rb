@@ -5,15 +5,13 @@ class Sieve
   end
 
   def primes
-    primes = []
     @numbers.each do |num|
       p = num
       until p*num > @max
         @numbers.delete(p*num)
         p += 1
       end
-      primes << num
     end
-    primes
+    @numbers
   end
 end
