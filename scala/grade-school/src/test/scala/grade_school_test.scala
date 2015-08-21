@@ -1,4 +1,5 @@
 import org.scalatest._
+import grade_school.School
 
 class GradeSchoolSpecs extends FunSuite with Matchers with OneInstancePerTest {
   val school = new School
@@ -8,13 +9,11 @@ class GradeSchoolSpecs extends FunSuite with Matchers with OneInstancePerTest {
   }
 
   test ("add student") {
-    pending
     school.add("Aimee", 2)
     school.db should be (Map(2 -> Seq("Aimee")))
   }
 
   test ("add more students in same class") {
-    pending
     school.add("James", 2)
     school.add("Blair", 2)
     school.add("Paul", 2)
@@ -22,14 +21,12 @@ class GradeSchoolSpecs extends FunSuite with Matchers with OneInstancePerTest {
   }
 
   test ("add students to different grades") {
-    pending
     school.add("Chelsea", 3)
     school.add("Logan", 7)
     school.db should be (Map(3 -> Seq("Chelsea"), 7 -> Seq("Logan")))
   }
 
   test ("get students in a grade") {
-    pending
     school.add("Franklin", 5)
     school.add("Bradley", 5)
     school.add("Jeff", 1)
@@ -37,12 +34,10 @@ class GradeSchoolSpecs extends FunSuite with Matchers with OneInstancePerTest {
   }
 
   test ("get students in a non-existant grade") {
-    pending
     school.grade(1) should be (Seq())
   }
 
   test ("sort school") {
-    pending
     school.add("Jennifer", 4)
     school.add("Kareem", 6)
     school.add("Christopher", 4)
